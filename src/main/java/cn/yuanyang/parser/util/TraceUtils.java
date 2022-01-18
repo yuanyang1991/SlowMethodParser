@@ -20,7 +20,8 @@ public class TraceUtils {
         String cpuUsage = jsonObject.optString(Constants.KEY_CPU_USAGE);
         String scene = jsonObject.optString(Constants.KEY_SCENE);
         String stackStr = jsonObject.optString(Constants.KEY_STACK);
-        return new Trace(cost, cpuUsage, scene, machine, string2Stack(stackStr));
+        String stackKey = jsonObject.optString(Constants.KEY_STACK_KEY);
+        return new Trace(cost, cpuUsage, scene, machine, string2Stack(stackStr), stackKey);
     }
 
     private static LinkedList<MethodItem> string2Stack(String stackStr) {
