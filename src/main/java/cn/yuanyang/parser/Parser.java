@@ -41,6 +41,11 @@ public class Parser {
             }
         }
         System.out.println("total:" + (traces == null ? 0 : traces.size()));
+        File resultFile = new File(filePath, "result.html");
+        if (!resultFile.exists()) {
+            resultFile.createNewFile();
+        }
+        ResultWriter.write(resultFile, traces);
     }
 
 

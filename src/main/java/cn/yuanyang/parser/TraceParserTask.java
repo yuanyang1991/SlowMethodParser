@@ -17,7 +17,8 @@ public class TraceParserTask implements Callable<Set<Trace>> {
 
     @Override
     public Set<Trace> call() throws Exception {
-        if (!traceFile.exists() || traceFile.length() == 0) {
+        if (!traceFile.exists() || traceFile.length() == 0 || !traceFile.isFile()) {
+            Log.i(traceFile.getAbsolutePath() +" is not a valid file");
             return null;
         }
         Set<Trace> list = new HashSet<>();

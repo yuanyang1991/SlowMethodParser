@@ -5,7 +5,7 @@ import cn.yuanyang.parser.util.MethodUtils;
 import java.util.LinkedList;
 import java.util.Objects;
 
-public class Trace {
+public class Trace implements Comparable<Trace> {
 
     public final long cost;
     public final String usage;
@@ -45,5 +45,17 @@ public class Trace {
                 ", machine='" + machine + '\'' +
                 ", stack=" + MethodUtils.stack2String(stack) +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Trace o) {
+        long diff = cost - o.cost;
+        if (diff > 0) {
+            return 1;
+        } else if (diff == 0) {
+            return 0;
+        } else {
+            return -1;
+        }
     }
 }

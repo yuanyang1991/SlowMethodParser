@@ -1,6 +1,7 @@
 package cn.yuanyang.parser.util;
 
 import cn.yuanyang.parser.Constants;
+import cn.yuanyang.parser.Log;
 import cn.yuanyang.parser.MethodItem;
 import cn.yuanyang.parser.Trace;
 import org.json.JSONObject;
@@ -12,6 +13,7 @@ public class TraceUtils {
     public static Trace parseItem(String line) {
         String content = TextUtils.getContent(line);
         if (TextUtils.isEmpty(content)) {
+            Log.i("content is empty: " + line);
             return null;
         }
         JSONObject jsonObject = new JSONObject(content);

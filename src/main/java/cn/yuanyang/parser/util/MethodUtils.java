@@ -31,7 +31,7 @@ public class MethodUtils {
         StringBuilder stringBuilder = new StringBuilder();
         while (listIterator.hasNext()) {
             MethodItem m = listIterator.next();
-            stringBuilder.append(m.methodName).append("\n");
+            stringBuilder.append(m.methodName).append(" ").append(m.durTime).append("<br>");
         }
         return stringBuilder.toString();
     }
