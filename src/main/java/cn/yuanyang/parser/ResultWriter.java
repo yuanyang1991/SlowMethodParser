@@ -12,7 +12,7 @@ public class ResultWriter {
             "<html>\n" +
             "<head>\n" +
             "    <meta charset=\"utf-8\">\n" +
-            "    <title>APKDiffer</title>\n" +
+            "    <title>Matrix_Trace</title>\n" +
             "    <style>\n" +
             "    table, td, th {\n" +
             "        border: 1px solid black;\n" +

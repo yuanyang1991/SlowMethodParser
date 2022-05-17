@@ -23,6 +23,9 @@ public class TraceUtils {
         String scene = jsonObject.optString(Constants.KEY_SCENE);
         String stackStr = jsonObject.optString(Constants.KEY_STACK);
         String stackKey = jsonObject.optString(Constants.KEY_STACK_KEY);
+        if (TextUtils.isEmpty(stackStr) || TextUtils.isEmpty(stackKey) || TextUtils.isEmpty(scene)) {
+            return null;
+        }
         return new Trace(cost, cpuUsage, scene, machine, string2Stack(stackStr), stackKey);
     }
 

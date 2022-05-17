@@ -25,7 +25,10 @@ public class TraceParserTask implements Callable<Set<Trace>> {
         LineReader reader = new LineReader(traceFile.getAbsolutePath());
         String line;
         while ((line = reader.readLine()) != null) {
-            list.add(TraceUtils.parseItem(line));
+            Trace trace = TraceUtils.parseItem(line);
+            if (trace != null) {
+                list.add(trace);
+            }
         }
         reader.release();
         return list;
